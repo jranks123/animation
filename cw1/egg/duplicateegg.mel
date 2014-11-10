@@ -1,30 +1,28 @@
 select -r MovingEgg ;
 duplicate -rr -un;
-// Result: MovingEgg2 //
+// Result: MovingEgg1 //
 doBakeNonDefHistory( 1, {"pre" });
-select -r MovingEgg2 ;
+select -r MovingEgg1 ;
 selectKey -clear ;
-selectKey -add -k MovingEgg_translateZ2 ;
+selectKey -add -k MovingEgg_translateZ1 ;
 
-keyframe -e -iub true -r -o over -vc -1.935182 -t 116 -t 140 -t 163 -t 168 -t 172 -t 173 -t 187 -t 192 -t 195 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc -1.935182 -t 208 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc -1.935182 -t 41 -t 75 -t 212 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc -1.935182 -t 197 -t 199 -t 205 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc -1.935182 -t 93 -t 98 -t 202 MovingEgg_translateZ2 ;
+keyframe -e -iub true -r -o over -vc -8.121777 -t 116 -t 140 -t 163 -t 168 -t 172 -t 173 -t 187 -t 192 MovingEgg_translateZ1 ;
+keyframe -e -iub true -r -o over -vc -8.121777 -t 41 -t 75 -t 93 -t 98 -t 197 -t 199 -t 202 -t 205 -t 208 -t 210 -t 212 MovingEgg_translateZ1 ;
+keyframe -e -iub true -r -o over -vc -8.121777 -t 195 MovingEgg_translateZ1 ;
 
 
 
 
 
-selectKey -attribute translateZ MovingEgg2;
-string $nodes[] = `keyframe -q -name MovingEgg2.translateZ`;
+selectKey -attribute translateZ MovingEgg1;
+string $nodes[] = `keyframe -q -name MovingEgg1.translateZ`;
 float $keyTimes[];
 for( $node in $nodes ) {
     $keyTimes = `keyframe -sl -q -tc $node`;
     print ($node + ": ");
     for( $time in $keyTimes ) {
         selectKey -clear ;
-        selectKey -add -k -t $time MovingEgg_translateZ2 ;
+        selectKey -add -k -t $time MovingEgg_translateZ1 ;
         float $valueOfKey[] = `keyframe -query -lastSelected -valueChange`;
         float $newValue;
         for( $i in $valueOfKey){
@@ -34,14 +32,13 @@ for( $node in $nodes ) {
     }
 };
 
-selectKey -add -k MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc 17.492589 -t 116 -t 140 -t 163 -t 168 -t 172 -t 173 -t 187 -t 192 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc 17.492589 -t 41 -t 75 -t 93 -t 98 -t 197 -t 199 -t 202 -t 205 -t 208 -t 212 MovingEgg_translateZ2 ;
-keyframe -e -iub true -r -o over -vc 17.492589 -t 195 MovingEgg_translateZ2 ;
+selectKey -add -k MovingEgg_translateZ1 ;
+keyframe -e -iub true -r -o over -vc 11.639016 -t 41 -t 75 -t 93 -t 98 -t 116 -t 140 -t 163 -t 168 -t 172 -t 173 -t 187 -t 192 -t 195 -t 197 -t 199 -t 205 -t 208 -t 210 -t 212 MovingEgg_translateZ1 ;
+keyframe -e -iub true -r -o over -vc 11.639016 -t 202 MovingEgg_translateZ1 ;
 
 
-selectKey -attribute rotateY MovingEgg2;
-string $nodes[] = `keyframe -q -name MovingEgg2.rotateY`;
+selectKey -attribute rotateY MovingEgg1;
+string $nodes[] = `keyframe -q -name MovingEgg1.rotateY`;
 float $keyTimes[];
 for( $node in $nodes ) {
     $keyTimes = `keyframe -sl -q -tc $node`;
@@ -49,7 +46,7 @@ for( $node in $nodes ) {
     for( $time in $keyTimes ) {
     	if($time < 188){
 	        selectKey -clear ;
-	        selectKey -add -k -t $time MovingEgg_rotateY2 ;
+	        selectKey -add -k -t $time MovingEgg_rotateY1 ;
 	        float $valueOfKey[] = `keyframe -query -lastSelected -valueChange`;
 	        float $newValue;
 	        for( $i in $valueOfKey){
@@ -60,15 +57,15 @@ for( $node in $nodes ) {
     }
 };
 
-selectKey -attribute rotateX MovingEgg2;
-string $nodes[] = `keyframe -q -name MovingEgg2.rotateX`;
+selectKey -attribute rotateX MovingEgg1;
+string $nodes[] = `keyframe -q -name MovingEgg1.rotateX`;
 float $keyTimes[];
 for( $node in $nodes ) {
     $keyTimes = `keyframe -sl -q -tc $node`;
     print ($node + ": ");
     for( $time in $keyTimes ) {
         selectKey -clear ;
-        selectKey -add -k -t $time MovingEgg_rotateX2 ;
+        selectKey -add -k -t $time MovingEgg_rotateX1 ;
         float $valueOfKey[] = `keyframe -query -lastSelected -valueChange`;
         float $newValue;
         for( $i in $valueOfKey){
@@ -78,15 +75,15 @@ for( $node in $nodes ) {
     }
 };
 
-selectKey -attribute rotateZ MovingEgg2;
-string $nodes[] = `keyframe -q -name MovingEgg2.rotateZ`;
+selectKey -attribute rotateZ MovingEgg1;
+string $nodes[] = `keyframe -q -name MovingEgg1.rotateZ`;
 float $keyTimes[];
 for( $node in $nodes ) {
     $keyTimes = `keyframe -sl -q -tc $node`;
     print ($node + ": ");
     for( $time in $keyTimes ) {
         selectKey -clear ;
-        selectKey -add -k -t $time MovingEgg_rotateZ2 ;
+        selectKey -add -k -t $time MovingEgg_rotateZ1 ;
         float $valueOfKey[] = `keyframe -query -lastSelected -valueChange`;
         float $newValue;
         for( $i in $valueOfKey){
